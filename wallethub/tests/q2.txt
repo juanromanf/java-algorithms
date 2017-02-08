@@ -1,0 +1,13 @@
+#Test 1
+select camel_case('juan roman f');
+
+#Test 2
+select camel_case('jUan rOman f');
+
+
+#Test 3
+select camel_case('juan   roman    f');
+
+
+#Test 4
+select camel_case('JUAN ROMAN f');

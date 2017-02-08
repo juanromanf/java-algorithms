@@ -3,6 +3,11 @@ package com.wallethub.java;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -20,8 +25,11 @@ public class TopPhrases {
 
         try (Stream<String> lines = Files.lines(Paths.get(filename), Charset.defaultCharset())) {
 
-            lines.forEach( s -> {
-                String[] phrases = s.split("|");
+            lines.forEach( (String s) -> {
+                List<String> phrases = Arrays.asList(s.split("|"));
+
+                Map<String, Long> counted = phrases.stream()
+                        .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
             });
 
