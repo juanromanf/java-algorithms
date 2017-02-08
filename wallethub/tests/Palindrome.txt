@@ -1,0 +1,6 @@
+Test cases for the palindrome implementation.
+
+1. 1221
+2. rotor
+3. anita lava la tina (in spanish)
+and some samples from http://www.palindromelist.net/
